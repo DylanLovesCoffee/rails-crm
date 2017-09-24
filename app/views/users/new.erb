@@ -1,5 +1,13 @@
 <h1>Sign Up</h1>
 
+<% if @errors %>
+  <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for @user, url: { action: 'create' } do |f| %>
   <%= f.label 'First Name' %>
   <%= f.text_field :first_name, placeholder: 'Jessica' %>

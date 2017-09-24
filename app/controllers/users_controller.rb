@@ -10,16 +10,21 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       @errors = @user.errors.full_messages
+      render 'new'
     end
   end
 
   def show
+    @user = User.find_by(id: params[:id])
+  end
 
+  def edit
+    @user = User.find_by(id: params[:id])
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :company, :email, :password_digest)
+    params.require(:user).permit(:first_name, :last_name, :company, :email, :password_digest, :password_confirmation)
   end
 end
