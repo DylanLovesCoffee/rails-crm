@@ -1,5 +1,5 @@
 class Client < ApplicationRecord
-  validates :company_name, :value, :user_id, presence: true
+  validates :company_name, :value, :user, presence: true
   validates :value, numericality: { only_integer: true }
   validates :company_name, uniqueness: true
 
