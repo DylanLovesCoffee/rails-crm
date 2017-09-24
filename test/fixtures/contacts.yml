@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  role: MyString
+  email: MyString
+  phone: MyString
+  decision_maker: false
+  client: one
+
+two:
+  name: MyString
+  role: MyString
+  email: MyString
+  phone: MyString
+  decision_maker: false
+  client: two
