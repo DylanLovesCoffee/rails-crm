@@ -1,0 +1,23 @@
+<h1>Sign Up</h1>
+
+<%= form_for @user, url: { action: 'create' } do |f| %>
+  <%= f.label 'First Name' %>
+  <%= f.text_field :first_name, placeholder: 'Jessica' %>
+  <br>
+  <%= f.label 'Last Name' %>
+  <%= f.text_field :last_name, placeholder: 'Jones' %>
+  <br>
+  <%= f.label 'Company' %>
+  <%= f.text_field :company, placeholder: 'Alias Investigations' %>
+  <br>
+  <%= f.label 'Email' %>
+  <%= f.email_field :email, placeholder: 'jessica.jones@ai.com' %>
+  <br>
+  <%= f.label 'Password' %>
+  <%= f.password_field :password_digest %>
+  <br>
+  <%= f.label 'Confirm Password' %>
+  <%= f.password_field :password_confirmation %>
+  <br>
+  <%= f.submit 'Create Account' %>
+<% end %>
