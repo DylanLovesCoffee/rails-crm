@@ -1,24 +1,4 @@
-# README
+# Rails CRM Tool
+This is a customer relationship management tool built using Ruby on Rails.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+It is currently in the early stages of development, but if you're curious about this project's progress, please check my latest commit messages!
