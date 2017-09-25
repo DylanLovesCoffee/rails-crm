@@ -33,7 +33,7 @@ class UsersController < ApplicationController
       flash[:success] = 'Profile Updated'
       redirect_to @user
     else
-      @errors = ['Unable to update profile.']
+      flash[:error] = 'Unable to update profile.'
       render 'edit'
     end
   end
