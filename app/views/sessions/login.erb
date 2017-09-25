@@ -1,13 +1,5 @@
 <h1>Log Me In</h1>
 
-<% if @errors %>
-  <ul>
-    <% @errors.each do |error| %>
-      <li><%= error %></li>
-    <% end %>
-  </ul>
-<% end %>
-
 <%= form_tag('/authenticate', method: 'post') do %>
   <%= label_tag('Email') %>
   <%= email_field_tag(:email) %>
