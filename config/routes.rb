@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :users, except: [:index] do
-    resources :clients
+    resources :clients do
+      resources :contacts, except: [:index, :show]
+    end
   end
 
   get 'login', to: 'sessions#login', as: :login

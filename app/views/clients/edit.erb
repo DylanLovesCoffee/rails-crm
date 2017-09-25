@@ -1,0 +1,12 @@
+<h1>Edit Client Profile Here</h1>
+
+<%= form_for @client, url: { action: 'update' } do |f| %>
+  <%= f.label 'Company Name' %>
+  <%= f.text_field :company_name %>
+  <br>
+  <%= f.label 'Value' %>
+  <%= f.number_field :value %>
+  <%= f.hidden_field :user %>
+  <br>
+  <%= f.submit 'Save Changes' %>
+<% end %>
