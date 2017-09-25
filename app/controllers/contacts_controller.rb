@@ -35,6 +35,12 @@ class ContactsController < ApplicationController
   end
 
   def destroy
+    client = Client.find_by(id: params[:client_id])
+
+    if @contact = clients.contacts.find_by(id: params[:id])
+      @contact.destroy
+      redirect_to "/users/#{client.user_id}/clients/#{client.id}"
+    end
   end
 
   private
