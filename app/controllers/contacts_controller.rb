@@ -17,9 +17,21 @@ class ContactsController < ApplicationController
   end
 
   def edit
+    client = Client.find_by(id: params[:client_id])
+    @contact = client.contacts.find_by(id: params[:id])
   end
 
   def update
+    client = Client.find_by(id: params[:client_id])
+    @contact = client.contacts.find_by(id: params[:id])
+
+    if @contact.update_attributes(contact_params)
+      flash[:success] = 'Contact profile updated.'
+      redirect_to "/users/#{client.user_id}/clients/#{client.id}"
+    else
+      flash[:error] = 'Unable to update contact profile.'
+      render 'edit'
+    end
   end
 
   def destroy
