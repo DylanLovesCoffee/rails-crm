@@ -9,6 +9,17 @@
   </head>
 
   <body>
+    <ul class="nav-bar">
+      <li><a href="/">Home</a></li>
+      <% if session[:user_id] == nil %>
+        <li><a href="/users/new">Signup</a></li>
+        <li><a href="/login">Log In</a></li>
+      <% else %>
+        <li><a href="/logout">Log Out</a></li>
+        <% @current_user = User.find_by(id: session[:user_id]) %>
+        <h3>Welcome, <%= @user.first_name %></h3>
+      <% end %>
+    </ul>
     <%= yield %>
   </body>
 </html>
