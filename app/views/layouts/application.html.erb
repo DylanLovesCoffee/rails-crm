@@ -17,7 +17,7 @@
       <% else %>
         <li><a href="/logout">Log Out</a></li>
         <% @current_user = User.find_by(id: session[:user_id]) %>
-        <h3>Welcome, <%= @user.first_name %></h3>
+        <h3>Welcome, <%= @current_user.first_name %></h3>
       <% end %>
     </ul>
     <%= yield %>
