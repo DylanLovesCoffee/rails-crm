@@ -1,0 +1,12 @@
+<h1>Form for New Client</h1>
+
+<%= form_for @client, url: { action: 'create' } do |f| %>
+  <%= f.label 'Company Name' %>
+  <%= f.text_field :company_name %>
+  <br>
+  <%= f.label 'Value' %>
+  <%= f.number_field :value %>
+  <%= f.hidden_field :user %>
+  <br>
+  <%= f.submit 'Create Profile' %>
+<% end %>

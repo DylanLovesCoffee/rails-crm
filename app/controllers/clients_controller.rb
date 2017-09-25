@@ -16,9 +16,7 @@ class ClientsController < ApplicationController
       flash[:success] = 'Customer profile created.'
       redirect_to @client
     else
-      @client.errors.full_messages do |error|
-        flash[:error] = error
-      end
+      flash[:error] = @client.errors.full_messages.first
       render 'new'
     end
   end

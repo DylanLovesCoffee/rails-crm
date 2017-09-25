@@ -5,7 +5,7 @@ require 'faker'
     last_name: Faker::Name.last_name,
     company: Faker::Company.name,
     email: Faker::Internet.email,
-    password_digest: 'password'
+    password: 'password'
   )
 end
 

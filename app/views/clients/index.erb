@@ -1,0 +1,8 @@
+<h1>This will display all clients under this user.</h1>
+
+<ul>
+  <% @clients.each do |client| %>
+    <%= link_to client.company_name, [client.user, client] %>
+    <li><%= client.value %></li>
+  <% end %>
+</ul>
