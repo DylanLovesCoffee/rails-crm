@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :users, except: [:index] do
     resources :clients do
       resources :contacts, except: [:index, :show]
+      resources :comments, only: [:new, :create]
     end
   end
 
