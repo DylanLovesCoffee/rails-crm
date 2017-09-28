@@ -27,6 +27,7 @@
 }
 
 .intro-text {
+  margin-top: 20px;
   padding: 20px;
 }
 
@@ -52,7 +53,21 @@
   background-color: #9B7E46;
 }
 
-.services-section {
+.services-column {
   padding: 20px;
   text-align: center;
+}
+
+.contact-container {
+  padding: 20px;
+  background-color: #F4B266;
+}
+
+.contact-title {
+  text-align: center;
+}
+
+.contact-column {
+  text-align: center;
+  padding: 20px;
 }
