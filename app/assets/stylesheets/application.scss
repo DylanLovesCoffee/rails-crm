@@ -1,12 +1,48 @@
 @import "bootstrap";
 
-#marketingCarousel {
-  height: 70%;
-  width: 100%;
+// E2EFDE
+// AFD0BF
+// 808F87
+// 9B7E46
+// F4B266
+
+.title {
+  text-align: center;
+  padding: 20px;
+}
+
+.carousel-item {
+  height: 500px;
 }
 
 .carousel-item > img {
+  position: absolute;
   vertical-align: middle;
-  width: 100%;
-  height: 100%;
+  min-height: 500px;
+}
+
+.intro {
+  padding: 20px;
+  background-color: #E2EFDE;
+}
+
+.intro-text {
+  padding: 20px;
+}
+
+.about-container {
+  padding: 20px;
+  background-color: #808F87;
+}
+
+.about-text {
+  padding: 10px;
+}
+
+.about-image {
+  height: 400px;
+  padding: 10px;
+  background-image: url("/assets/data.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
