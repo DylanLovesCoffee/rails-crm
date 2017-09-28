@@ -1,6 +1,12 @@
 @import "bootstrap";
 
 #marketingCarousel {
-  height: 500px;
-  width: 85%;
+  height: 70%;
+  width: 100%;
+}
+
+.carousel-item > img {
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
 }
