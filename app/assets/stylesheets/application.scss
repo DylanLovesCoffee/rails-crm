@@ -8,7 +8,7 @@
 
 .title {
   text-align: center;
-  padding: 20px;
+  margin-bottom: 20px;
 }
 
 .carousel-item {
@@ -45,4 +45,14 @@
   background-image: url("/assets/data.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.services-container {
+  padding: 20px;
+  background-color: #9B7E46;
+}
+
+.services-section {
+  padding: 20px;
+  text-align: center;
 }

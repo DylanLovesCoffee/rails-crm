@@ -10,7 +10,9 @@
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="background-color: #AFD0BF">
-      <a class="navbar-brand" href="/"><img src="/assets/railsforce.png" alt="Railsforce" width="60"></a>
+      <a class="navbar-brand" href="/">
+        <img src="/assets/railsforce.png" alt="Railsforce" width="60">
+      </a>
       <ul class="nav">
         <% if @current_user = User.find_by(id: session[:user_id]) %>
         <li class="nav-item">
