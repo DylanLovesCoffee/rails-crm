@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rails CRM</title>
+    <title>Railsforce</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,17 +9,23 @@
   </head>
 
   <body>
-    <ul class="nav-bar">
-      <li><a href="/">Home</a></li>
-      <% if session[:user_id] == nil %>
-        <li><a href="/users/new">Signup</a></li>
-        <li><a href="/login">Log In</a></li>
-      <% else %>
-        <li><a href="/logout">Log Out</a></li>
-        <% @current_user = User.find_by(id: session[:user_id]) %>
-        <h3>Welcome, <%= @current_user.first_name %></h3>
-      <% end %>
-    </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark justify-content-between" style="background-color: #19647E">
+      <a class="navbar-brand" href="/">Railsforce</a>
+      <ul class="nav">
+        <% if @current_user = User.find_by(id: session[:user_id]) %>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Log Out</a>
+        </li>
+        <% else %>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/new" style="color: #EEE5E5">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login" style="color: #EEE5E5">Log In</a>
+        </li>
+        <% end %>
+      </ul>
+    </nav>
 
     <div class="container">
       <% flash.each do |key, value| %>
