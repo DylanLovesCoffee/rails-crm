@@ -21,6 +21,9 @@
       <ul class="nav">
         <% if @current_user = User.find_by(id: session[:user_id]) %>
         <li class="nav-item">
+          <a class="nav-link" href="/users/show/clients">Clients</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="/users/show"><%= @current_user.first_name %> <%= @current_user.last_name %></a>
         </li>
         <li class="nav-item">
