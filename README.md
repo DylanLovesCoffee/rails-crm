@@ -1,4 +1,7 @@
 # Rails CRM Tool
-This is a customer relationship management tool built using Ruby on Rails.
+This is a customer relationship management tool built using Ruby on Rails and Bootstrap.
 
 It is currently in the early stages of development, but if you're curious about this project's progress, please check my latest commit messages!
+
+See a short demo of what I have so far below:
+![railsforce-demo](/assets/railsforce-demo.gif)
