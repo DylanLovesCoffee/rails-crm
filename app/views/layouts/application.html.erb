@@ -14,16 +14,25 @@
         <img src="/assets/railsforce.png" alt="Railsforce" width="60">
       </a>
       <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#products">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
         <% if @current_user = User.find_by(id: session[:user_id]) %>
         <li class="nav-item">
           <a class="nav-link" href="/logout">Log Out</a>
         </li>
         <% else %>
         <li class="nav-item">
-          <a class="nav-link" href="/users/new" style="color: #19647E">Sign Up</a>
+          <a class="nav-link" href="/users/new">Sign Up</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/login" style="color: #19647E">Log In</a>
+          <a class="nav-link" href="/login"">Log In</a>
         </li>
         <% end %>
       </ul>

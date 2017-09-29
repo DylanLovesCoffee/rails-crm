@@ -6,9 +6,13 @@
 // 9B7E46
 // F4B266
 
+.nav-link {
+  color: #19647E;
+}
+
 .title {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .carousel-item {
@@ -31,6 +35,14 @@
   padding: 20px;
 }
 
+.car-cap-1 {
+  top: 0;
+}
+
+.car-cap-3 {
+  color: black;
+}
+
 .about-container {
   padding: 20px;
   background-color: #808F87;
@@ -46,6 +58,7 @@
   background-image: url("/assets/data.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  margin-top: 20px;
 }
 
 .services-container {
@@ -56,6 +69,7 @@
 .services-column {
   padding: 20px;
   text-align: center;
+  margin-top: 10px;
 }
 
 .contact-container {
@@ -70,4 +84,14 @@
 .contact-column {
   text-align: center;
   padding: 20px;
+}
+
+.line-break {
+  border-top: solid;
+  padding: 20px;
+  color: green;
+}
+
+.phone-num {
+  text-align: center;
 }
