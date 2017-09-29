@@ -1,18 +1,20 @@
 <div class="container login-logo">
-  <img src="/assets/railsforce.png" alt="railsforce">
+    <img src="/assets/railsforce.png" alt="railsforce">
 </div>
 
-<div class="container login-form">
-  <%= form_tag('/authenticate', method: 'post') do %>
-  <div class="form-group">
-    <%= label_tag('', 'Email', class: 'small') %>
-    <%= email_field_tag(:email, '', class: 'form-control') %>
+<div class="login-form-container">
+  <div class="login-form">
+    <%= form_tag('/authenticate', method: 'post') do %>
+    <div class="form-group">
+      <%= label_tag('', 'Email', class: 'small') %>
+      <%= email_field_tag(:email, '', class: 'form-control') %>
+    </div>
+    <div class="form-group">
+      <%= label_tag('', 'Password', class: 'small') %>
+      <%= password_field_tag(:password, '', class: 'form-control') %>
+    </div>
+    <br>
+    <%= submit_tag('Log In', class:'btn btn-primary btn-block') %>
+    <% end %>
   </div>
-  <div class="form-group">
-    <%= label_tag('', 'Password', class: 'small') %>
-    <%= password_field_tag(:password, '', class: 'form-control') %>
-  </div>
-  <br>
-  <%= submit_tag('Login', class:'btn btn-primary btn-block') %>
-  <% end %>
 </div>
