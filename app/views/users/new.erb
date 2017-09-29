@@ -1,24 +1,35 @@
-<h1>Sign Up</h1>
+<div class="container signup-logo">
+    <img src="/assets/railsforce.png" alt="railsforce">
+</div>
 
-
-<%= form_for @user, url: { action: 'create' } do |f| %>
-  <%= f.label 'First Name' %>
-  <%= f.text_field :first_name, placeholder: 'Jessica' %>
-  <br>
-  <%= f.label 'Last Name' %>
-  <%= f.text_field :last_name, placeholder: 'Jones' %>
-  <br>
-  <%= f.label 'Company' %>
-  <%= f.text_field :company, placeholder: 'Alias Investigations' %>
-  <br>
-  <%= f.label 'Email' %>
-  <%= f.email_field :email, placeholder: 'jessica.jones@ai.com' %>
-  <br>
-  <%= f.label 'Password' %>
-  <%= f.password_field :password %>
-  <br>
-  <%= f.label 'Confirm Password' %>
-  <%= f.password_field :password_confirmation %>
-  <br>
-  <%= f.submit 'Create Account' %>
-<% end %>
+<div class="signup-form-container">
+  <div class="signup-form">
+    <%= form_for @user, url: { action: 'create' } do |f| %>
+    <div class="form-group">
+      <%= f.label '', 'First Name', class: 'small' %>
+      <%= f.text_field :first_name, placeholder: 'Jessica', class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label '', 'Last Name', class: 'small' %>
+      <%= f.text_field :last_name, placeholder: 'Jones', class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label '', 'Company', class: 'small' %>
+      <%= f.text_field :company, placeholder: 'Alias Investigations', class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label '', 'Email', class: 'small' %>
+      <%= f.email_field :email, placeholder: 'jessica.jones@ai.com', class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label '', 'Password', class: 'small' %>
+      <%= f.password_field :password, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label '', 'Confirm Password', class: 'small' %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+    </div>
+    <%= f.submit 'Create Account', class: 'btn btn-primary btn-block' %>
+    <% end %>
+  </div>
+</div>

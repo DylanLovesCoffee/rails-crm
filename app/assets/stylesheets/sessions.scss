@@ -28,7 +28,7 @@
 }
 
 .car-cap-3 {
-  color: black;
+  text-shadow: 2px 2px 2px grey;
 }
 
 .about-container {
@@ -86,4 +86,22 @@
 
 .login-logo {
   text-align: center;
+  padding: 20px;
+}
+
+.login-form-container {
+  background-color: #E2EFDE;
+  padding: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+  border-radius: 10px;
+}
+
+.login-form {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
 }
