@@ -1,1 +1,47 @@
-<h1>This shows the profile page for the client: <%= @client.company_name %></h1>
+<div class="title-heading">
+  <h3><strong><%= @client.company_name %></strong></h3>
+</div>
+
+<div class="list-container">
+  <div class="list-group">
+    <div class="row">
+      <div class="col">
+        <h6>Name</h6>
+      </div>
+      <div class="col">
+        <h6>Role</h6>
+      </div>
+      <div class="col">
+        <h6>Email</h6>
+      </div>
+      <div class="col">
+        <h6>Phone</h6>
+      </div>
+      <div class="col">
+      </div>
+    </div>
+    <% @client.contacts.each do |contact| %>
+    <div class="list-group-item">
+      <div class="row">
+        <div class="col">
+          <small><%= contact.name %></small>
+        </div>
+        <div class="col">
+          <small><%= contact.role %></small>
+        </div>
+        <div class="col">
+          <small><a href="mailto:<%= contact.email %>"><%= contact.email %></a></small>
+        </div>
+        <div class="col">
+          <small><%= contact.phone %></small>
+        </div>
+        <div class="col">
+          <small>Edit</small>
+          <small> | </small>
+          <small>Delete</small>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
