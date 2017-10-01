@@ -36,7 +36,7 @@
           <small><%= contact.phone %></small>
         </div>
         <div class="col">
-          <small>Edit</small>
+          <small><%= link_to "Edit", "/users/#{@client.user_id}/clients/#{@client.id}/contacts/#{contact.id}/edit" %></small>
           <small> | </small>
           <small>Delete</small>
         </div>
