@@ -9,7 +9,7 @@
           <h4>Comments</h4>
         </div>
         <div class="col">
-          <a class="btn btn-success btn-sm" href="#">New Comment</a>
+          <a id="add-comment" class="btn btn-success btn-sm" href="#">New Comment</a>
         </div>
       </div>
       <div class="list-group">
@@ -24,7 +24,9 @@
             </div>
           </div>
           <div class="row">
-            <small><%= comment.body %></small>
+            <div class="col">
+              <small><%= comment.body %></small>
+            </div>
           </div>
         </div>
         <% end %>
@@ -32,23 +34,23 @@
     </div>
   </div>
   <div class="col-sm-8">
-    <div class="list-container">
-      <h4>Contacts</h4>
-      <div class="list-group">
+    <div class="contacts-container">
+      <div class="list-group contacts-header">
         <div class="row">
           <div class="col">
-            <h6>Name</h6>
+            <h4>Name</h4>
           </div>
           <div class="col">
-            <h6>Role</h6>
+            <h4>Role</h4>
           </div>
           <div class="col">
-            <h6>Email</h6>
+            <h4>Email</h4>
           </div>
           <div class="col">
-            <h6>Phone</h6>
+            <h4>Phone</h4>
           </div>
           <div class="col">
+            <a id="add-contact" class="btn btn-success btn-sm" href="#">Add Contact</a>
           </div>
         </div>
         <% @client.contacts.each do |contact| %>

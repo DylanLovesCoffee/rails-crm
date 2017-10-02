@@ -5,4 +5,8 @@
 
 $(document).ready(function(){
   $("#marketingCarousel").carousel();
+
+  $("#add-comment").on('click', function(e){
+    e.preventDefault();
+  })
 })
