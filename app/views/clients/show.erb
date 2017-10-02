@@ -1,47 +1,80 @@
 <div class="title-heading">
   <h3><strong><%= @client.company_name %></strong></h3>
 </div>
-
-<div class="list-container">
-  <div class="list-group">
-    <div class="row">
-      <div class="col">
-        <h6>Name</h6>
+<div class="row contents-container">
+  <div class="col">
+    <div class="comments-container">
+      <div class="row comments-header">
+        <div class="col">
+          <h4>Comments</h4>
+        </div>
+        <div class="col">
+          <a class="btn btn-success btn-sm" href="#">New Comment</a>
+        </div>
       </div>
-      <div class="col">
-        <h6>Role</h6>
-      </div>
-      <div class="col">
-        <h6>Email</h6>
-      </div>
-      <div class="col">
-        <h6>Phone</h6>
-      </div>
-      <div class="col">
+      <div class="list-group">
+        <% @client.comments.each do |comment| %>
+        <div class="list-group-item">
+          <div class="row">
+            <div class="col-sm-7">
+              <h6><%= comment.title %></h6>
+            </div>
+            <div class="col">
+              <small><%= comment.created_at.strftime("%I:%M%P, %b. %d %Y") %></small>
+            </div>
+          </div>
+          <div class="row">
+            <small><%= comment.body %></small>
+          </div>
+        </div>
+        <% end %>
       </div>
     </div>
-    <% @client.contacts.each do |contact| %>
-    <div class="list-group-item">
-      <div class="row">
-        <div class="col">
-          <small><%= contact.name %></small>
+  </div>
+  <div class="col-sm-8">
+    <div class="list-container">
+      <h4>Contacts</h4>
+      <div class="list-group">
+        <div class="row">
+          <div class="col">
+            <h6>Name</h6>
+          </div>
+          <div class="col">
+            <h6>Role</h6>
+          </div>
+          <div class="col">
+            <h6>Email</h6>
+          </div>
+          <div class="col">
+            <h6>Phone</h6>
+          </div>
+          <div class="col">
+          </div>
         </div>
-        <div class="col">
-          <small><%= contact.role %></small>
+        <% @client.contacts.each do |contact| %>
+        <div class="list-group-item">
+          <div class="row">
+            <div class="col">
+              <small><%= contact.name %></small>
+            </div>
+            <div class="col">
+              <small><%= contact.role %></small>
+            </div>
+            <div class="col">
+              <small><a href="mailto:<%= contact.email %>"><%= contact.email %></a></small>
+            </div>
+            <div class="col">
+              <small><%= contact.phone %></small>
+            </div>
+            <div class="col">
+              <small><%= link_to "Edit", edit_user_client_contact_path(@client.user, @client, contact) %></small>
+              <small> | </small>
+              <small><%= link_to "Delete", user_client_contact_path(@client.user, @client, contact), method: 'delete' %></small>
+            </div>
+          </div>
         </div>
-        <div class="col">
-          <small><a href="mailto:<%= contact.email %>"><%= contact.email %></a></small>
-        </div>
-        <div class="col">
-          <small><%= contact.phone %></small>
-        </div>
-        <div class="col">
-          <small><%= link_to "Edit", edit_user_client_contact_path(@client.user, @client, contact) %></small>
-          <small> | </small>
-          <small><%= link_to "Delete", user_client_contact_path(@client.user, @client, contact), method: 'delete' %></small>
-        </div>
+        <% end %>
       </div>
     </div>
-    <% end %>
   </div>
 </div>
