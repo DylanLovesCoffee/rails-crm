@@ -12,10 +12,8 @@
           <a id="add-comment-button" class="btn btn-success btn-sm" href="/users/<%= @client.user.id %>/clients/<%= @client.id %>/comments/new">New Comment</a>
         </div>
       </div>
-      <div class="list-group">
-        <div class="new-comment-container">
-        </div>
-        <% @client.comments.each do |comment| %>
+      <div class="list-group comment-list">
+        <% @client.comments.order(created_at: :desc).each do |comment| %>
           <%= render partial: 'comments/show', locals: {comment: comment} %>
         <% end %>
       </div>
