@@ -43,7 +43,7 @@ $(document).ready(function(){
     };
   })
 
-  $("#add-contact").on('click', function(e){
+  $("#add-contact-button").on('click', function(e){
     e.preventDefault();
     var $newContactButton = $(this);
     $.ajax({
@@ -51,7 +51,7 @@ $(document).ready(function(){
       method: 'get'
     }).done(function(response){
       console.log(response)
-      // $("#add-comment-button").addClass('disabled')
+      $("#add-contact-button").addClass('disabled')
       $(".contact-list").prepend(response);
     })
   })
