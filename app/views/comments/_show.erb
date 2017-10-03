@@ -1,0 +1,15 @@
+<div class="list-group-item">
+  <div class="row">
+    <div class="col-sm-7">
+      <h6><%= comment.title %></h6>
+    </div>
+    <div class="col">
+      <small><%= comment.created_at.strftime("%I:%M%P, %b. %d %Y") %></small>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <small><%= comment.body %></small>
+    </div>
+  </div>
+</div>

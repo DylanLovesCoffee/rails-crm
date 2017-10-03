@@ -9,26 +9,14 @@
           <h4>Comments</h4>
         </div>
         <div class="col add-comment-container">
-          <a id="add-comment" class="btn btn-success btn-sm" href="/users/<%= @client.user.id %>/clients/<%= @client.id %>/comments/new">New Comment</a>
+          <a id="add-comment-button" class="btn btn-success btn-sm" href="/users/<%= @client.user.id %>/clients/<%= @client.id %>/comments/new">New Comment</a>
         </div>
       </div>
       <div class="list-group">
-        <% @client.comments.each do |comment| %>
-        <div class="list-group-item">
-          <div class="row">
-            <div class="col-sm-7">
-              <h6><%= comment.title %></h6>
-            </div>
-            <div class="col">
-              <small><%= comment.created_at.strftime("%I:%M%P, %b. %d %Y") %></small>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <small><%= comment.body %></small>
-            </div>
-          </div>
+        <div class="new-comment-container">
         </div>
+        <% @client.comments.each do |comment| %>
+          <%= render partial: 'comments/show', locals: {comment: comment} %>
         <% end %>
       </div>
     </div>

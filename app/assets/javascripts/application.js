@@ -6,14 +6,28 @@
 $(document).ready(function(){
   $("#marketingCarousel").carousel();
 
-  $(".add-comment-container").on('click', '#add-comment', function(e){
+  $(".add-comment-container").on('click', '#add-comment-button', function(e){
     e.preventDefault();
-    var $newCommentButton = $(this)
+    var $newCommentButton = $(this);
     $.ajax({
       url: $newCommentButton.attr('href'),
       method: 'get'
     }).done(function(response){
-      console.log(response)
+      $("#add-comment-button").addClass('disabled')
+      $(".new-comment-container").append(response);
     })
   })
+
+  $(".new-comment-container").on("submit", ".new-comment-form", function(e){
+    e.preventDefault(e);
+    var $newCommentForm = $(this.firstElementChild);
+    $.ajax({
+      url: $newCommentForm.attr('action'),
+      method: $newCommentForm.attr('method'),
+      data: $newCommentForm.serialize()
+    }).done(function(data){
+      console.log(data)
+    })
+  })
+
 })
