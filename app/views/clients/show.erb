@@ -8,8 +8,8 @@
         <div class="col">
           <h4>Comments</h4>
         </div>
-        <div class="col">
-          <a id="add-comment" class="btn btn-success btn-sm" href="#">New Comment</a>
+        <div class="col add-comment-container">
+          <a id="add-comment" class="btn btn-success btn-sm" href="/users/<%= @client.user.id %>/clients/<%= @client.id %>/comments/new">New Comment</a>
         </div>
       </div>
       <div class="list-group">

@@ -6,7 +6,14 @@
 $(document).ready(function(){
   $("#marketingCarousel").carousel();
 
-  $("#add-comment").on('click', function(e){
+  $(".add-comment-container").on('click', '#add-comment', function(e){
     e.preventDefault();
+    var $newCommentButton = $(this)
+    $.ajax({
+      url: $newCommentButton.attr('href'),
+      method: 'get'
+    }).done(function(response){
+      console.log(response)
+    })
   })
 })
