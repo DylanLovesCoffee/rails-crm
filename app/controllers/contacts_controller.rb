@@ -16,6 +16,10 @@ class ContactsController < ApplicationController
     end
   end
 
+  def show
+    render layout: false
+  end
+
   def edit
     client = Client.find_by(id: params[:client_id])
     @contact = client.contacts.find_by(id: params[:id])
