@@ -43,4 +43,17 @@ $(document).ready(function(){
     };
   })
 
+  $("#add-contact").on('click', function(e){
+    e.preventDefault();
+    var $newContactButton = $(this);
+    $.ajax({
+      url: $newContactButton.attr('href'),
+      method: 'get'
+    }).done(function(response){
+      console.log(response)
+      // $("#add-comment-button").addClass('disabled')
+      $(".contact-list").prepend(response);
+    })
+  })
+
 })

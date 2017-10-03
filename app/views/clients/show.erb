@@ -21,24 +21,24 @@
   </div>
   <div class="col-sm-8">
     <div class="contacts-container">
-      <div class="list-group contacts-header">
-        <div class="row">
-          <div class="col">
-            <h4>Name</h4>
-          </div>
-          <div class="col">
-            <h4>Role</h4>
-          </div>
-          <div class="col">
-            <h4>Email</h4>
-          </div>
-          <div class="col">
-            <h4>Phone</h4>
-          </div>
-          <div class="col">
-            <a id="add-contact" class="btn btn-success btn-sm" href="#">Add Contact</a>
-          </div>
+      <div class="row contacts-header">
+        <div class="col">
+          <h4>Name</h4>
         </div>
+        <div class="col">
+          <h4>Role</h4>
+        </div>
+        <div class="col">
+          <h4>Email</h4>
+        </div>
+        <div class="col">
+          <h4>Phone</h4>
+        </div>
+        <div class="col">
+          <a id="add-contact" class="btn btn-success btn-sm" href="/users/<%= @client.user.id %>/clients/<%= @client.id %>/contacts/new">Add Contact</a>
+        </div>
+      </div>
+      <div class="list-group contact-list">
         <% @client.contacts.each do |contact| %>
           <%= render partial: 'contacts/show', locals: {contact: contact} %>
         <% end %>
