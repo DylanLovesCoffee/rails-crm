@@ -1,1 +1,82 @@
-<h1>This shows the profile page for the client: <%= @client.company_name %></h1>
+<div class="title-heading">
+  <h3><strong><%= @client.company_name %></strong></h3>
+</div>
+<div class="row contents-container">
+  <div class="col">
+    <div class="comments-container">
+      <div class="row comments-header">
+        <div class="col">
+          <h4>Comments</h4>
+        </div>
+        <div class="col add-comment-container">
+          <a id="add-comment" class="btn btn-success btn-sm" href="/users/<%= @client.user.id %>/clients/<%= @client.id %>/comments/new">New Comment</a>
+        </div>
+      </div>
+      <div class="list-group">
+        <% @client.comments.each do |comment| %>
+        <div class="list-group-item">
+          <div class="row">
+            <div class="col-sm-7">
+              <h6><%= comment.title %></h6>
+            </div>
+            <div class="col">
+              <small><%= comment.created_at.strftime("%I:%M%P, %b. %d %Y") %></small>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <small><%= comment.body %></small>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-8">
+    <div class="contacts-container">
+      <div class="list-group contacts-header">
+        <div class="row">
+          <div class="col">
+            <h4>Name</h4>
+          </div>
+          <div class="col">
+            <h4>Role</h4>
+          </div>
+          <div class="col">
+            <h4>Email</h4>
+          </div>
+          <div class="col">
+            <h4>Phone</h4>
+          </div>
+          <div class="col">
+            <a id="add-contact" class="btn btn-success btn-sm" href="#">Add Contact</a>
+          </div>
+        </div>
+        <% @client.contacts.each do |contact| %>
+        <div class="list-group-item">
+          <div class="row">
+            <div class="col">
+              <small><%= contact.name %></small>
+            </div>
+            <div class="col">
+              <small><%= contact.role %></small>
+            </div>
+            <div class="col">
+              <small><a href="mailto:<%= contact.email %>"><%= contact.email %></a></small>
+            </div>
+            <div class="col">
+              <small><%= contact.phone %></small>
+            </div>
+            <div class="col">
+              <small><%= link_to "Edit", edit_user_client_contact_path(@client.user, @client, contact) %></small>
+              <small> | </small>
+              <small><%= link_to "Delete", user_client_contact_path(@client.user, @client, contact), method: 'delete' %></small>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

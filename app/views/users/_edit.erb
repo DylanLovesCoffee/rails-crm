@@ -1,0 +1,33 @@
+<div class="edit-form-container">
+  <div class="edit-form">
+    <%= form_for @user, url: { action: 'update' } do |f| %>
+    <div class="form-row">
+      <div class="col">
+        <%= f.label :first_name, class: 'small' %>
+        <%= f.text_field :first_name, class: 'form-control' %>
+      </div>
+      <div class="col">
+        <%= f.label :last_name, class: 'small' %>
+        <%= f.text_field :last_name, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :company, class: 'small' %>
+      <%= f.text_field :company, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :email, class: 'small' %>
+      <%= f.email_field :email, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :password, class: 'small' %>
+      <%= f.password_field :password, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :password_confirmation, class: 'small' %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+    </div>
+    <%= f.submit 'Save Changes', class: 'btn btn-success btn-block' %>
+    <% end %>
+  </div>
+</div>

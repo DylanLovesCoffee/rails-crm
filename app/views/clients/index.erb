@@ -1,8 +1,51 @@
-<h1>This will display all clients under this user.</h1>
-
-<ul>
-  <% @clients.each do |client| %>
-    <%= link_to client.company_name, [client.user, client] %>
-    <li><%= client.value %></li>
-  <% end %>
-</ul>
+<div class="title-heading">
+  <h2>Clients</h2>
+</div>
+<div class="list-container">
+  <div class="list-group">
+    <div class="row">
+      <div class="col">
+        <h6>Account</h6>
+      </div>
+      <div class="col">
+        <h6>Value</h6>
+      </div>
+      <div class="col">
+        <h6>Decision Maker</h6>
+      </div>
+      <div class="col">
+        <h6>Last Reached Out</h6>
+      </div>
+      <div class="col">
+        <h6>Last Comment</h6>
+      </div>
+    </div>
+    <% @clients.each do |client| %>
+    <div class="list-group-item">
+      <div class="row">
+        <div class="col">
+          <%= link_to client.company_name, [client.user, client] %>
+        </div>
+        <div class="col">
+          <small><%= client.value %></small>
+        </div>
+        <div class="col">
+          <% if client.contacts.where(decision_maker: true).blank?  %>
+          <small>n/a</small>
+          <% else %>
+          <small><%= client.contacts.where(decision_maker: true).first.name %></small>
+          <br>
+          <small><%= client.contacts.where(decision_maker: true).first.role %></small>
+          <% end %>
+        </div>
+        <div class="col">
+          <small><%= client.comments.last.created_at.strftime("%b. %d %Y") %></small>
+        </div>
+        <div class="col text-truncate">
+          <small><%= client.comments.last.body %></small>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

@@ -1,3 +1,41 @@
-// Place all the styles related to the Clients controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.title-heading {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contents-container {
+  padding: 20px;
+}
+
+.contacts-container {
+  background-color: #E2EFDE;
+  padding: 10px;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+
+.comments-container {
+  background-color: #808F87;
+  padding: 5px;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+
+.comments-header {
+  text-align: center;
+  padding: 10px;
+}
+
+.contacts-header {
+  text-align: center;
+  padding: 10px;
+}
