@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   def new
     @comment = Comment.new
+    render layout: false
   end
 
   def create
@@ -8,12 +9,15 @@ class CommentsController < ApplicationController
     @comment = client.comments.new(comment_params)
 
     if @comment.save
-      flash[:success] = 'Comment added.'
-      redirect_to "/users/#{client.user_id}/clients/#{client.id}"
+      render partial: 'show', locals: {comment: @comment}
     else
-      flash[:error] = @comment.errors.full_messages.first
-      render 'new'
+      @errors = @comment.errors.full_messages
+      render 'new', layout: false
     end
+  end
+
+  def show
+    render layout: false
   end
 
   private
