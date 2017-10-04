@@ -19,7 +19,7 @@ $(document).ready(function(){
   })
 
   $(".comment-list").on("submit", ".new-comment-form", function(e){
-    e.preventDefault(e);
+    e.preventDefault();
     var $newCommentForm = $(this.firstElementChild);
     $.ajax({
       url: $newCommentForm.attr('action'),
@@ -50,10 +50,45 @@ $(document).ready(function(){
       url: $newContactButton.attr('href'),
       method: 'get'
     }).done(function(response){
-      console.log(response)
       $("#add-contact-button").addClass('disabled')
       $(".contact-list").prepend(response);
     })
+  })
+
+  $(".contact-list").on("submit", ".new-contact-form", function(e){
+    e.preventDefault();
+    var $newContactForm = $(this.firstElementChild);
+    $.ajax({
+      url: $newContactForm.attr('action'),
+      method: $newContactForm.attr('method'),
+      data: $newContactForm.serialize()
+    }).done(function(data){
+      console.log(data)
+      $(".contact-list div").first().remove();
+      $(".contact-list").prepend(data);
+      $("#add-contact-button").removeClass('disabled')
+    })
+  })
+
+  $(".contact-list").bind("input propertychange", ".new-contact-form", function(){
+    var name = document.getElementById('contact_name').value
+    var role = document.getElementById('contact_role').value
+    var email = document.getElementById('contact_email').value
+    var phone = document.getElementById('contact_phone').value
+    var dm = document.getElementById('contact_decision_maker').value
+    var contactFormSubmit = document.getElementById('contact_submit')
+
+    if (
+      name.length > 0
+      && role.length > 0
+      && email.length > 0
+      && phone.length > 0
+      && dm
+    ) {
+      contactFormSubmit.disabled = false
+    } else {
+      contactFormSubmit.disabled = true
+    };
   })
 
 })

@@ -39,7 +39,7 @@
         </div>
       </div>
       <div class="list-group contact-list">
-        <% @client.contacts.each do |contact| %>
+        <% @client.contacts.order(created_at: :desc).each do |contact| %>
           <%= render partial: 'contacts/show', locals: {contact: contact} %>
         <% end %>
       </div>

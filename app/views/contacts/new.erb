@@ -19,12 +19,9 @@
     </div>
     <div class="form-group">
       <%= f.label '', 'Decision Maker*', class: 'small' %>
-      <%= f.radio_button :decision_maker, true, class: 'form-control' %>
-      <%= f.label '', 'Yes', class: 'small' %>
-      <%= f.radio_button :decision_maker, false, class: 'form-control' %>
-      <%= f.label '', 'No', class: 'small' %>
+      <%= f.select(:decision_maker, [['No', false], ['Yes', true]], {}, {class: 'form-control'}) %>
     </div>
-    <%= f.submit 'Create Contact', class: 'btn btn-primary btn-sm btn-block' %>
+    <%= f.submit 'Create Contact', id: 'contact_submit', class: 'btn btn-primary btn-sm btn-block', disabled: true %>
     <% end %>
   </div>
 </div>
