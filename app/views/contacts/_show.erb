@@ -16,8 +16,8 @@
       <small><%= contact.phone %></small>
     </div>
     <div class="col">
-      <small><%= link_to "Edit", edit_user_client_contact_path(@client.user, @client, contact) %> | </small>
-      <small><%= link_to "Delete", user_client_contact_path(@client.user, @client, contact), method: 'delete' %></small>
+      <small><%= link_to "Edit", edit_user_client_contact_path(contact.client.user, contact.client, contact) %> | </small>
+      <small><%= link_to "Delete", user_client_contact_path(contact.client.user, contact.client, contact), method: 'delete' %></small>
     </div>
   </div>
 </div>

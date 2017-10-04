@@ -9,10 +9,8 @@ class ContactsController < ApplicationController
     @contact = client.contacts.new(contact_params)
 
     if @contact.save
-      flash[:success] = 'Contact created.'
-      redirect_to "/users/#{client.user_id}/clients/#{client.id}"
+      render partial: 'show', locals: {contact: @contact}
     else
-      flash[:error] = @contact.errors.full_messages.first
       render 'new'
     end
   end
