@@ -1,4 +1,4 @@
-<div class="list-group-item">
+<div class="list-group-item contact-list-item">
   <div class="row">
     <div class="col">
       <small><%= contact.name %></small>
@@ -16,8 +16,9 @@
       <small><%= contact.phone %></small>
     </div>
     <div class="col">
-      <small><%= link_to "Edit", edit_user_client_contact_path(contact.client.user, contact.client, contact) %> | </small>
-      <small><%= link_to "Delete", user_client_contact_path(contact.client.user, contact.client, contact), method: 'delete' %></small>
+      <%= link_to "Edit", edit_user_client_contact_path(contact.client.user, contact.client, contact), class: 'edit-contact small' %>
+      <small>|</small>
+      <%= link_to "Delete", user_client_contact_path(contact.client.user, contact.client, contact), method: 'delete', class: 'small' %>
     </div>
   </div>
 </div>
