@@ -93,12 +93,13 @@ $(document).ready(function(){
 
   $(".contact-list-item").on("click", ".edit-contact", function(e){
     e.preventDefault();
-    var $contactEdit = $(this)
+    var $contactEdit = $(this);
     $.ajax({
       url: $contactEdit.attr('href'),
       method: $contactEdit.attr('method')
     }).done(function(response){
-      $contactEdit.parents(".contact-list-item").append(response)
+      $contactEdit.parents(".contact-list-item").append(response);
+      $contactEdit.parents(".contact-row").hide();
     })
   })
 })
