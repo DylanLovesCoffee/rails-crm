@@ -1,26 +1,26 @@
 <div class="contact-edit-container">
   <%= form_for @contact, url: { action: 'update'} do |f| %>
-  <div class="col-auto">
+  <div class="form-group">
     <%= f.label '', 'Name*', class: 'small' %>
     <%= f.text_field :name, class: 'form-control' %>
   </div>
-  <div class="col-auto">
+  <div class="form-group">
     <%= f.label '', 'Role*', class: 'small' %>
     <%= f.text_field :role, class: 'form-control' %>
   </div>
-  <div class="col-auto">
+  <div class="form-group">
     <%= f.label '', 'Email*', class: 'small' %>
     <%= f.text_field :email, class: 'form-control' %>
   </div>
-  <div class="col-auto">
+  <div class="form-group">
     <%= f.label '', 'Phone*', class: 'small' %>
     <%= f.text_field :phone, class: 'form-control' %>
   </div>
-  <div class="col-auto">
+  <div class="form-group">
     <%= f.label '', 'Decision Maker*', class: 'small' %>
     <%= f.select(:decision_maker, [['No', false], ['Yes', true]], {}, {class: 'form-control'}) %>
   </div>
-  <div class="col-auto">
+  <div class="form-group">
     <%= f.submit 'Save Changes', class: 'btn btn-primary btn-sm btn-block' %>
   </div>
   <% end %>
