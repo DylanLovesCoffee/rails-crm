@@ -102,4 +102,11 @@ $(document).ready(function(){
       $contactEdit.parents(".contact-row").hide();
     })
   })
+
+  $(".contact-list-item").on("click", ".close-edit-btn", function(e){
+    e.preventDefault();
+    $(this).parents(".contact-list-item").children(".contact-row").show();
+    $(this).parents(".contact-edit-container").remove();
+  })
+
 })
