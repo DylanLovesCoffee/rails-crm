@@ -111,4 +111,10 @@ $(document).ready(function(){
     $(this).parents(".contact-edit-container").remove();
   })
 
+  $(".contact-list").on("click", ".close-contact-new", function(e){
+    e.preventDefault();
+    $("#add-contact-button").removeClass('disabled');
+    $(this).parents(".new-contact-container").remove();
+  })
+
 })

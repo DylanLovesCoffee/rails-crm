@@ -1,4 +1,9 @@
 <div class="new-contact-container">
+  <div class="close-contact-new">
+    <button type="button" class="justify-content-end close" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
   <div class="new-contact-form">
     <%= form_for @contact, url: { action: 'create'} do |f| %>
     <div class="form-group">
