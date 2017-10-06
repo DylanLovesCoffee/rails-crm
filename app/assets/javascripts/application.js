@@ -103,7 +103,7 @@ $(document).ready(function(){
     })
   })
 
-  $(".contact-list-item").on("click", ".close-edit-btn", function(e){
+  $(".contact-list-item").on("click", ".close-contact-edit", function(e){
     e.preventDefault();
     $(this).parents(".contact-list-item").children(".contact-row").show();
     $(this).parents(".contact-edit-container").remove();
