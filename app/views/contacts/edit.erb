@@ -1,4 +1,9 @@
 <div class="contact-edit-container">
+  <div class="close-contact-edit">
+    <button type="button" class="justify-content-end close" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
   <%= form_for @contact, url: { action: 'update'} do |f| %>
   <div class="form-group">
     <%= f.label '', 'Name*', class: 'small' %>
