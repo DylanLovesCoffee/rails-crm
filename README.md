@@ -5,4 +5,4 @@ It is currently in the early stages of development, but if you're curious about 
 
 See a short demo of what I have so far below:
 
-<img src="http://g.recordit.co/EaQqWH4V7B.gif">
+<img src="app/assets/images/railsforce-demo.gif">
