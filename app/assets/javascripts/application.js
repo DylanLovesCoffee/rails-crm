@@ -98,6 +98,7 @@ $(document).ready(function(){
       url: $contactEdit.attr('href'),
       method: $contactEdit.attr('method')
     }).done(function(response){
+      $("#add-contact-button").addClass('disabled');
       $contactEdit.parents(".contact-list-item").append(response);
       $contactEdit.parents(".contact-row").hide();
     })
@@ -105,6 +106,7 @@ $(document).ready(function(){
 
   $(".contact-list-item").on("click", ".close-contact-edit", function(e){
     e.preventDefault();
+    $("#add-contact-button").removeClass('disabled');
     $(this).parents(".contact-list-item").children(".contact-row").show();
     $(this).parents(".contact-edit-container").remove();
   })
