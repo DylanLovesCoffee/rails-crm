@@ -76,6 +76,8 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    d3-rails (4.10.2)
+      railties (>= 3.1)
     erubi (1.6.1)
     execjs (2.7.0)
     ffi (1.9.18)
@@ -200,6 +202,7 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
+  d3-rails
   faker!
   jbuilder (~> 2.5)
   jquery-rails

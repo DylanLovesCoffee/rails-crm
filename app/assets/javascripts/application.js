@@ -2,6 +2,7 @@
 //= require jquery_ujs
 //= require popper
 //= require bootstrap-sprockets
+//= require d3
 
 $(document).ready(function(){
   $("#marketingCarousel").carousel();
