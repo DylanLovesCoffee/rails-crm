@@ -142,4 +142,10 @@ $(document).ready(function(){
     }
   });
 
+  $(".add-client-container").on("click", ".close-client-new", function(e){
+    e.preventDefault();
+    $(".add-client-btn").removeClass('disabled');
+    $(this).parents(".new-client-container").remove();
+  });
+
 })
