@@ -1,12 +1,21 @@
-<h1>Form for New Client</h1>
-
-<%= form_for @client, url: { action: 'create' } do |f| %>
-  <%= f.label 'Company Name' %>
-  <%= f.text_field :company_name %>
-  <br>
-  <%= f.label 'Value' %>
-  <%= f.number_field :value %>
-  <%= f.hidden_field :user %>
-  <br>
-  <%= f.submit 'Create Profile' %>
-<% end %>
+<div class="new-client-container">
+  <div class="close-client-new">
+    <button type="button" class="justify-content-end close" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="new-client-form">
+    <%= form_for @client, url: { action: 'create' } do |f| %>
+    <div class="form-group">
+      <%= f.label '', 'Company Name', class: 'small' %>
+      <%= f.text_field :company_name, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label '', 'Value', class: 'small' %>
+      <%= f.number_field :value, class: 'form-control' %>
+    </div>
+    <%= f.hidden_field :user %>
+    <%= f.submit 'Create Profile', id: 'client_submit', class: 'btn btn-primary btn-sm btn-block', disabled: true %>
+    <% end %>
+  </div>
+</div>

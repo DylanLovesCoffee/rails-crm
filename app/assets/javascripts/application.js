@@ -125,10 +125,21 @@ $(document).ready(function(){
       url: $addClientButton.attr('href'),
       method: 'get'
     }).done(function(response){
-      console.log(response)
-      // $("#add-contact-button").addClass('disabled');
-      // $(".contact-list").prepend(response);
+      $(".add-client-btn").addClass('disabled');
+      $(".add-client-container").prepend(response);
     });
+  });
+
+  $(".add-client-container").bind("input propertychange", ".new-client-form", function(){
+    var name = document.getElementById('client_company_name').value;
+    var value = document.getElementById('client_value').value;
+    var newClientSubmit = document.getElementById('client_submit');
+
+    if (name.length > 0 && value.length > 0 && !isNaN(value)) {
+      newClientSubmit.disabled = false;
+    } else {
+      newClientSubmit.disabled = true;
+    }
   });
 
 })
