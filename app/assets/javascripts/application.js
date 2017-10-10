@@ -117,4 +117,10 @@ $(document).ready(function(){
     $(this).parents(".new-contact-container").remove();
   })
 
+  $(".comment-list").on("click", ".close-comment-new", function(e){
+    e.preventDefault();
+    $("#add-comment-button").removeClass('disabled');
+    $(this).parents(".new-comment-container").remove();
+  })
+
 })

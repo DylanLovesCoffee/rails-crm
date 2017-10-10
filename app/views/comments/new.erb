@@ -1,4 +1,9 @@
 <div class="new-comment-container">
+  <div class="close-comment-new">
+    <button type="button" class="justify-content-end close" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
   <div class="new-comment-form">
     <%= form_for @comment, url: {action: 'create'} do |f| %>
     <div class="form-group">
