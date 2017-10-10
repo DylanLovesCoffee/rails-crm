@@ -1,7 +1,6 @@
 class ClientsController < ApplicationController
   def index
     user = User.find_by(id: session[:user_id])
-    puts params
     @clients = user.clients
   end
 
@@ -16,7 +15,7 @@ class ClientsController < ApplicationController
 
     if @client.save
       flash[:success] = 'Customer profile created.'
-      redirect_to @client
+      redirect_to "/users/#{user.id}/clients/#{@client.id}", status: 200
     else
       flash[:error] = @client.errors.full_messages.first
       render 'new'

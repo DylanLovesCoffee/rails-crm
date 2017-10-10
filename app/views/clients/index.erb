@@ -37,18 +37,26 @@
           </div>
           <div class="col">
             <% if client.contacts.where(decision_maker: true).blank?  %>
-            <small>n/a</small>
+              <small>n/a</small>
             <% else %>
-            <small><%= client.contacts.where(decision_maker: true).first.name %></small>
-            <br>
-            <small><%= client.contacts.where(decision_maker: true).first.role %></small>
+              <small><%= client.contacts.where(decision_maker: true).first.name %></small>
+              <br>
+              <small><%= client.contacts.where(decision_maker: true).first.role %></small>
             <% end %>
           </div>
           <div class="col">
-            <small><%= client.comments.last.created_at.strftime("%b. %d %Y") %></small>
+            <% if client.comments.last == nil %>
+              <small>n/a</small>
+            <% else %>
+              <small><%= client.comments.last.created_at.strftime("%b. %d %Y") %></small>
+            <% end %>
           </div>
           <div class="col text-truncate">
-            <small><%= client.comments.last.body %></small>
+            <% if client.comments.last == nil %>
+              <small>n/a</small>
+            <% else %>
+              <small><%= client.comments.last.body %></small>
+            <% end %>
           </div>
         </div>
       </div>
