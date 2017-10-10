@@ -1,11 +1,13 @@
 class ClientsController < ApplicationController
   def index
     user = User.find_by(id: session[:user_id])
+    puts params
     @clients = user.clients
   end
 
   def new
     @client = Client.new
+    render layout: false
   end
 
   def create
