@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to "/users/#{@user.id}/clients"
     else
-      flash[:error] = 'Not a valid email or password.'
+      flash[:danger] = 'Not a valid email or password.'
       render 'login'
     end
   end

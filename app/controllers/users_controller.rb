@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       @user.errors.full_messages.each do |error|
-        flash[:error] = error
+        flash[:info] = error
       end
       render 'new'
     end
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
       flash[:success] = 'Profile Updated'
       redirect_to @user
     else
-      flash[:error] = 'Unable to update profile.'
+      flash[:danger] = 'Unable to update profile.'
       render 'edit'
     end
   end

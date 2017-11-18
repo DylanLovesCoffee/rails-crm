@@ -33,7 +33,7 @@ class ContactsController < ApplicationController
       flash[:success] = 'Contact profile updated.'
       redirect_to "/users/#{client.user_id}/clients/#{client.id}"
     else
-      flash[:error] = 'Unable to update contact profile.'
+      flash[:danger] = 'Unable to update contact profile.'
       render 'edit'
     end
   end
