@@ -11,9 +11,7 @@ class UsersController < ApplicationController
       flash[:success] = "Thanks for signing up, #{@user.first_name}!"
       redirect_to @user
     else
-      @user.errors.full_messages.each do |error|
-        flash[:error] = error
-      end
+      flash[:info] = @user.errors.full_messages.first
       render 'new'
     end
   end
@@ -33,7 +31,7 @@ class UsersController < ApplicationController
       flash[:success] = 'Profile Updated'
       redirect_to @user
     else
-      flash[:error] = 'Unable to update profile.'
+      flash[:danger] = 'Unable to update profile.'
       render 'edit'
     end
   end

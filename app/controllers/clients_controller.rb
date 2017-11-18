@@ -17,7 +17,7 @@ class ClientsController < ApplicationController
       flash[:success] = 'Customer profile created.'
       redirect_to "/users/#{user.id}/clients/#{@client.id}", status: 200
     else
-      flash[:error] = @client.errors.full_messages.first
+      flash[:info] = @client.errors.full_messages.first
       render 'new'
     end
   end
@@ -40,7 +40,7 @@ class ClientsController < ApplicationController
       flash[:success] = 'Customer profile updated.'
       redirect_to @client
     else
-      flash[:error] = 'Unable to update profile.'
+      flash[:danger] = 'Unable to update profile.'
       render 'edit'
     end
   end
