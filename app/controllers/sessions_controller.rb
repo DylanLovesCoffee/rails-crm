@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def authenticate
     if @user = User.find_by(email: params[:email]).try(:authenticate, params[:password])
       session[:user_id] = @user.id
-      redirect_to @user
+      redirect_to "/users/#{@user.id}/clients"
     else
       flash[:error] = 'Not a valid email or password.'
       render 'login'
