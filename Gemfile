@@ -32,7 +32,6 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'sprockets-rails'
 gem 'jquery-rails'
-gem "d3-rails"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
