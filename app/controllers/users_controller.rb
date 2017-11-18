@@ -11,9 +11,7 @@ class UsersController < ApplicationController
       flash[:success] = "Thanks for signing up, #{@user.first_name}!"
       redirect_to @user
     else
-      @user.errors.full_messages.each do |error|
-        flash[:info] = error
-      end
+      flash[:info] = @user.errors.full_messages.first
       render 'new'
     end
   end
